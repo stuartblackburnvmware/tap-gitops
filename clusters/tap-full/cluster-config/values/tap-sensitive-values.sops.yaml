@@ -2,7 +2,7 @@ tap_install:
     sensitive_values:
         shared:
             image_registry:
-                project_path: ENC[AES256_GCM,data:UagX0Dq8Se/iZp2YmeB9aJqe0J2bIV+z7eWgmSNKi3TcmDsu,iv:i6y/0sCPT6E/iy1wrrbCQFwyj5S1jMcLJZLq+HLvf28=,tag:XZr9UEKwSMrgZIDeOLeHUg==,type:str]
+                project_path: ENC[AES256_GCM,data:VWD/CN64jJwRiHzyahUWGK/9UGyhLZZ8Uau+9X/94zmxooI=,iv:1pH46DKflhaD4uHSSHja/HmPey8fvS/dNaglWHvj2HA=,tag:967dCeX0nVg5mMTGebDS2w==,type:str]
                 username: ENC[AES256_GCM,data:2DBH/ryvXUX7xFabv7E=,iv:ma89H8Zb9pZR+q7HRGHZB7OxWN/u1uwJM6h14JCi29s=,tag:PTrylr8OvWNaV3gw9g68TA==,type:str]
                 password: ENC[AES256_GCM,data:XilI59REglCHhOy5d8lUzICYxqriU0lekAhfFvnSJ7j1ceo77+zKN3Rc8ZbJ0w1dsDHQKg==,iv:EYWYJdgm/ryHkNlBA0LnCgGC5XDt4xfwZSCN3Fw6kbk=,tag:VzJC5GrkXQsvMxUV5E4fQA==,type:str]
 sops:
@@ -20,8 +20,8 @@ sops:
             Q21XTnN6SHdKQVZkVitnY3c0REcwS0kKM+pQRtJtgDqNpNqpVxG6iyNd3rck2TYh
             cL0MkEdMIc94USOCE9C96O42j+c2QVnLLTN7Av1HihE4cQzkd93Ldg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-11-01T16:50:59Z"
-    mac: ENC[AES256_GCM,data:c7TUTcoPNLR1QF4LSi6qji7YHro5VJF+mfnD6oY/ElDMieucBBiU+xZVqLCIAnVL32yaaVi/Pij14Kh3/zob3H7f/rYODaUPBEuFKWTQJ5Xa8JkgER5UEoMMEuKVfDYSZKbWeqbT3Smjk548/1+0HZF1iWIADHoIN09FRCAWxXU=,iv:v0lN61g/VhYv6WIw/AqncISVMyu8WU3nD5+dEW6AkOQ=,tag:J1KH7IKBooWeZpltBR+6ig==,type:str]
+    lastmodified: "2023-11-01T18:32:43Z"
+    mac: ENC[AES256_GCM,data:Yzqj4cQAYa54u9lfjYVhLcOlcroqKk/+shy9ZHs2uysJsHo0UUXth3YZHCDwA8uQ4QSSQwMi/dRiDOjMaTn0Rq0x8hWlMyZZ5iOWO06LYBSKiMQsMFxX6h6wFGNjTrKDUlZufFuN3ndVHXJIHyFK9Zr0wu/LS5pxsu5/bpK1jds=,iv:uXEAM1i8vC94Z8CQLFDWK99JWJIBOf0Q4lcRwplc8e0=,tag:L8G98nrshVOphb8duAMEgQ==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.8.1
