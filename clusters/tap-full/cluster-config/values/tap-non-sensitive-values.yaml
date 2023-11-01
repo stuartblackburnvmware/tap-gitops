@@ -129,7 +129,7 @@ tap_install:
                   - url: https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/index.html
                     title: Tanzu Application Platform Documentation (testy test test)
         organization:
-          name: 'My Super Amazing Org'
+          name: 'My Amazing Org'
         catalog:
           # locations:
           #   # This doesn't work because I'm getting the following error in my tap-gui pod:
