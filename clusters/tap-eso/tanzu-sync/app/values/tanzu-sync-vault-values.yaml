@@ -1,0 +1,22 @@
+---
+secrets:
+  eso:
+    vault:
+      server: https://vault-public-vault-b6c4924c.fa68220c.z1.hashicorp.cloud:8200
+      namespace: "admin"
+      auth:
+        kubernetes:
+          mountPath: stu-cluster
+          role: stu-cluster--tanzu-sync-secrets
+    remote_refs:
+      sync_git:
+        ssh:
+          private_key:
+            key: secret/dev/stu-cluster/tanzu-sync/sync-git/ssh
+            property: privatekey
+          known_hosts:
+            key: secret/dev/stu-cluster/tanzu-sync/sync-git/ssh
+            property: knownhosts
+      install_registry_dockerconfig:
+        dockerconfigjson:
+          key: secret/dev/stu-cluster/tanzu-sync/install-registry-dockerconfig
