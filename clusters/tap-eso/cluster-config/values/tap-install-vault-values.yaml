@@ -1,8 +1,5 @@
 ---
 tap_install:
-  version:
-      package_repo_bundle_tag: "1.6.4" # Populate these values with the latest patch version.
-      package_version: "1.6.4"
   secrets:
     eso:
       vault:
