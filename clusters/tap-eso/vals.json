@@ -1,7 +1,0 @@
-{
-  "ootb_supply_chain_basic": {
-    "gitops": {
-      "ssh_secret": "SSH-SECRET-KEY"
-    }
-  }
-}
