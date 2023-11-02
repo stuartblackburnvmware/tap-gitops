@@ -1,0 +1,244 @@
+---
+tap_install:
+  values:
+    ceip_policy_disclosed: true
+    profile: full # Can take iterate, build, run, view.
+
+    supply_chain: basic # Can take testing, testing_scanning.
+
+    ootb_templates:
+      iaas_auth: true
+
+    shared:
+      ingress_domain: "stu-tap.duckdns.org"
+      # ingress_issuer: letsencrypt-production
+      ingress_issuer: my-company-ca
+      kubernetes_version: "1.27.3" ###############fix underlying AKS in terraform
+      # image_registry:
+      # ca_cert_data: |
+      #   LetsEncrypt Root CA
+      #   -----BEGIN CERTIFICATE-----
+      #   MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw
+      #   TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+      #   cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMTUwNjA0MTEwNDM4
+      #   WhcNMzUwNjA0MTEwNDM4WjBPMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJu
+      #   ZXQgU2VjdXJpdHkgUmVzZWFyY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBY
+      #   MTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAK3oJHP0FDfzm54rVygc
+      #   h77ct984kIxuPOZXoHj3dcKi/vVqbvYATyjb3miGbESTtrFj/RQSa78f0uoxmyF+
+      #   0TM8ukj13Xnfs7j/EvEhmkvBioZxaUpmZmyPfjxwv60pIgbz5MDmgK7iS4+3mX6U
+      #   A5/TR5d8mUgjU+g4rk8Kb4Mu0UlXjIB0ttov0DiNewNwIRt18jA8+o+u3dpjq+sW
+      #   T8KOEUt+zwvo/7V3LvSye0rgTBIlDHCNAymg4VMk7BPZ7hm/ELNKjD+Jo2FR3qyH
+      #   B5T0Y3HsLuJvW5iB4YlcNHlsdu87kGJ55tukmi8mxdAQ4Q7e2RCOFvu396j3x+UC
+      #   B5iPNgiV5+I3lg02dZ77DnKxHZu8A/lJBdiB3QW0KtZB6awBdpUKD9jf1b0SHzUv
+      #   KBds0pjBqAlkd25HN7rOrFleaJ1/ctaJxQZBKT5ZPt0m9STJEadao0xAH0ahmbWn
+      #   OlFuhjuefXKnEgV4We0+UXgVCwOPjdAvBbI+e0ocS3MFEvzG6uBQE3xDk3SzynTn
+      #   jh8BCNAw1FtxNrQHusEwMFxIt4I7mKZ9YIqioymCzLq9gwQbooMDQaHWBfEbwrbw
+      #   qHyGO0aoSCqI3Haadr8faqU9GY/rOPNk3sgrDQoo//fb4hVC1CLQJ13hef4Y53CI
+      #   rU7m2Ys6xt0nUW7/vGT1M0NPAgMBAAGjQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNV
+      #   HRMBAf8EBTADAQH/MB0GA1UdDgQWBBR5tFnme7bl5AFzgAiIyBpY9umbbjANBgkq
+      #   hkiG9w0BAQsFAAOCAgEAVR9YqbyyqFDQDLHYGmkgJykIrGF1XIpu+ILlaS/V9lZL
+      #   ubhzEFnTIZd+50xx+7LSYK05qAvqFyFWhfFQDlnrzuBZ6brJFe+GnY+EgPbk6ZGQ
+      #   3BebYhtF8GaV0nxvwuo77x/Py9auJ/GpsMiu/X1+mvoiBOv/2X/qkSsisRcOj/KK
+      #   NFtY2PwByVS5uCbMiogziUwthDyC3+6WVwW6LLv3xLfHTjuCvjHIInNzktHCgKQ5
+      #   ORAzI4JMPJ+GslWYHb4phowim57iaztXOoJwTdwJx4nLCgdNbOhdjsnvzqvHu7Ur
+      #   TkXWStAmzOVyyghqpZXjFaH3pO3JLF+l+/+sKAIuvtd7u+Nxe5AW0wdeRlN8NwdC
+      #   jNPElpzVmbUq4JUagEiuTDkHzsxHpFKVK7q4+63SM1N95R1NbdWhscdCb+ZAJzVc
+      #   oyi3B43njTOQ5yOf+1CceWxG1bQVs5ZufpsMljq4Ui0/1lvh+wjChP4kqKOJ2qxq
+      #   4RgqsahDYVvTH9w7jXbyLeiNdd8XM2w9U/t7y0Ff/9yi0GE44Za4rF2LN9d11TPA
+      #   mRGunUHBcnWEvgJBQl9nJEiU0Zsnvgc/ubhPgXRR4Xq37Z0j4r7g1SgEEzwxA57d
+      #   emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
+      #   -----END CERTIFICATE-----
+
+    ootb_supply_chain_basic:
+      registry:
+        server: stutapregistry.azurecr.io
+        repository: tapimages
+      gitops:
+        ssh_secret: "github-ssh-secret"
+        server_address: ssh://git@github.com/
+        repository_owner: stuartblackburnvmware
+        repository_name: tap-gitops
+      # scanning:
+      #   image:
+      #     template: snyk-private-image-scan-template
+      #     policy: snyk-scan-policy
+      #   source:
+      #     template: blob-source-scan-template
+      #     policy: scan-policy
+
+    buildservice:
+      exclude_dependencies: true
+      kp_default_repository_secret:
+        name: registry-credentials
+        namespace: stu-ns
+      # enable_automatic_dependency_updates: false
+
+    contour:
+      envoy:
+        service:
+          type: LoadBalancer
+          
+    local_source_proxy:
+      # Takes the value from the project_path under the image_registry section of shared by default, but can be overridden by setting a different value.
+      push_secret:
+        # When set to true, the secret mentioned in this section is automatically exported to Local Source Proxy's namespace.
+        name: lsp-push-credentials
+        namespace: tap-install
+        # When set to true, the secret mentioned in this section is automatically exported to Local Source Proxy's namespace.
+        create_export: true
+
+    # learningcenter:
+    #   ingressDomain: learning-center.stu-tap.duckdns.org
+
+    ootb_delivery_basic:
+      service_account: default
+
+    tap_gui:
+      ingressEnabled: true
+      ingressDomain: stu-tap.duckdns.org
+      app_config:
+        supplyChain:
+          enablePlugin: true
+        auth:
+          environment: development
+          loginPage:
+            github:
+              title: Github Login
+              message: Enter with your GitHub account yo
+          allowGuestAccess: false
+        backend:
+          baseUrl: https://tap-gui.stu-tap.duckdns.org
+          cors:
+            origin: https://tap-gui.stu-tap.duckdns.org
+        techdocs:
+          builder: 'external'
+        app:
+          baseUrl: https://tap-gui.stu-tap.duckdns.org
+          title: 'TAP TAP TAP'
+          support:
+            url: www.leavemealone.com
+            items:
+              - title: Contact Support (or don't)
+                icon: email
+                links:
+                  - url: https://fakeurl.com
+                    title: Nobody is going to support you
+              - title: Documentation
+                icon: docs
+                links:
+                  - url: https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/index.html
+                    title: Tanzu Application Platform Documentation (testy test test)
+        organization:
+          name: 'My Amazing Org'
+        catalog:
+          # locations:
+          #   # This doesn't work because I'm getting the following error in my tap-gui pod:
+          #   # entry of type github-discovery, but does not have the corresponding catalog processor GithubDiscoveryProcessor installed
+          #   # Need to figure this out. In the meantime, just register workloads in the gui manually
+          #   - type: github-discovery
+          #     target: https://github.com/stuartblackburnvmware/*/blob/main/catalog/catalog-info.yaml
+
+    metadata_store:
+      ingressEnabled: true
+      ingressDomain: "stu-tap.duckdns.org"
+      app_service_type: ClusterIP
+      ns_for_export_app_cert: "*"
+      # db_host: "stu-fake.postgres.database.azure.com"
+      # db_user: "stutappostgres"
+      # db_password: "xxx"
+      # db_name: "metadata-store"
+      # db_port: "5432"
+      # db_sslmode: "verify-full"
+      # db_max_open_conns: 10
+      # db_max_idle_conns: 100
+      # db_conn_max_lifetime: 60
+      # db_ca_certificate: |
+      #   -----BEGIN CERTIFICATE-----
+      #   MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
+      #   MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+      #   d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+      #   QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT
+      #   MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+      #   b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG
+      #   9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB
+      #   CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97
+      #   nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt
+      #   43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P
+      #   T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4
+      #   gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO
+      #   BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR
+      #   TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw
+      #   DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr
+      #   hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg
+      #   06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF
+      #   PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
+      #   YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
+      #   CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=
+      #   -----END CERTIFICATE-----
+
+      # deploy_internal_db: "false"
+
+    scanning:
+      metadataStore:
+        url: "" # Configuration is moved, so set this string to empty.
+
+    accelerator:
+      server:
+        service_type: "ClusterIP"
+
+    cnrs:
+      domain_name: stu-tap.duckdns.org
+
+    namespace_provisioner:
+      controller: true
+      default_parameters:
+        supply_chain_service_account:
+          secrets:
+          - github-ssh-secret
+          - github-http-secret
+
+    appliveview:
+      backend:
+        ingressEnabled: true
+        # sslDeactivated: false
+        # host: appliveview.stu-tap.duckdns.org
+        # caCertData: |-
+        #   -----BEGIN CERTIFICATE-----
+        #   MIIFoDCCA4igAwIBAgIJAMJb+ENNEw4KMA0GCSqGSIb3DQEBCwUAMD0xCzAJBgNV
+        #   BAYTAkNBMQswCQYDVQQIDAJPTjEQMA4GA1UECgwHc3R1LW9yZzEPMA0GA1UEAwwG
+        #   c3R1LWNhMB4XDTIzMTAxNjE5MDExMVoXDTMzMTAxMzE5MDExMVowPTELMAkGA1UE
+        #   BhMCQ0ExCzAJBgNVBAgMAk9OMRAwDgYDVQQKDAdzdHUtb3JnMQ8wDQYDVQQDDAZz
+        #   dHUtY2EwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDRJp37c/pBQac0
+        #   Ock9ZSR/b1jHrrZKjW7mP1U5+1A4x9egBEFITgyKHH1ETGw5axmM8mHFvItZbqF/
+        #   iroPfEtLmT2sXuCcl2aD1jQrzIlSpp3DAQjxj/fTymARAgx9UmRxRNAC28z4XK04
+        #   SXaWcntReBO+2qK6wA5XE2cuEV1Czz8CqFNNTk3mR2/uNDq0SonqvxqSynJNrmpr
+        #   VSjcM340Df6p7At9DBB3LMrArBnwlm84lRpE8KXhaykKPcCLjWW75rXn3FuDx9W3
+        #   sa59utRcGRpYwCeIXsCGHtWy9HLuEmmJBWNRUXhsvK4wHXGlKvyKOLJ6WwcQUeEG
+        #   8MteUaF0vzC2k6TD6dIBDnZjkXsL0NVjp6Ov1txKQ0mUiCpYUOaMyYbimn3QeqwZ
+        #   BcM+NbAhOvb3pOHucjtL9XAoW4v4t5jTeU29CchbZnj40NTOd7/C9RKMJ1cdFjAe
+        #   WCiLNS556IqZs9DzT//B0KTrc1Qt2IAo9fTTW466GGEq4cUx/vK803H9S/NBiIIo
+        #   1fXTsQ+gx0YTQjEbYmYLfkqvgBCP7OTyFLPNlZ4wQa51hFtvdusZvheHlHw/HNyG
+        #   /CrJXGzhfIrQBqGs6PlGxpfmYUmB4U2FE2w+FccEWRgTH6/fwPdt9BQ9gKiUa5Q7
+        #   Uqb1EX5FpqsM0o5hRQ8lUqRANxtDQQIDAQABo4GiMIGfMA8GA1UdEwEB/wQFMAMB
+        #   Af8wHQYDVR0OBBYEFJx4niv5psA344VtBR6oqd7FcGC4MG0GA1UdIwRmMGSAFJx4
+        #   niv5psA344VtBR6oqd7FcGC4oUGkPzA9MQswCQYDVQQGEwJDQTELMAkGA1UECAwC
+        #   T04xEDAOBgNVBAoMB3N0dS1vcmcxDzANBgNVBAMMBnN0dS1jYYIJAMJb+ENNEw4K
+        #   MA0GCSqGSIb3DQEBCwUAA4ICAQA5V2Xq06FiRwiNO1f3AzPXWXQIanCNVSNfIZ18
+        #   M5D/CBi3HvtWSwziL8beWFi3UPhh3g1WonDPBzvNaEXjE8x53/YXKm/8xTvsq6HA
+        #   aS7jGmhrUeT2LMDY8IcVzg/lrGU+LrXY0Xo012tLopPeEWwQ/3LVDnjxL+/Vq1vK
+        #   BFhfq9LH1t0WwQe6NLv1i7QC4WwE7GO2EOcr12BRiXSxxce6i5+x71L7wrEzONID
+        #   /cgt0zPu8nIABzZIUG9wF4LeEp2l9NntZrFFzVSwyfitl0L0qHULa3XmXf5SGthl
+        #   exhgxJx+fvzTPiCeZVgXzVjAUEbSxR58fEZ1UdhHCPP4kWkszyXv5PagCwNepFy8
+        #   rcHVhoZomezMYtapBWwFmQYfcjMYHyX6hDmR6XvonOKYBI1pC2FgiZEg1PmJnh7O
+        #   pIcjNVW77IB/clh9+Pw1PL/OjXN/GFY/Kj8CauheiHmOtAMsS/dNx9T2F2qMsdZV
+        #   6n48+veCyYKNg5795eL2pQfL6QureMBskYQ9Uds81WDdfiGIAWmOUR1SCejaazPT
+        #   QVRUQ0zpxUmiVAxlut0tzc1yhGkYgybfXVYvPpIPXPtqra0YwSz44izDVJWQl6Ye
+        #   t8UmeX/Z7zM4VSLRH1DRH/zs6LnSLGUadtQ3i8xIAkKzlo638RE3bh3LsdySH7jf
+        #   /V4oWg==
+        #   -----END CERTIFICATE-----
+
+    excluded_packages:
+    #  - image-policy-webhook.signing.apps.tanzu.vmware.com
+      - learningcenter.tanzu.vmware.com
+      - workshops.learningcenter.tanzu.vmware.com
+      - tap-telemetry.tanzu.vmware.com
