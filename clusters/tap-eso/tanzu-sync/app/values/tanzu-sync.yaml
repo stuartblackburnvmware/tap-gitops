@@ -5,3 +5,6 @@ git:
   sub_path: clusters/tap-eso/cluster-config
 tap_package_repository:
   oci_repository: stutapregistry.azurecr.io/tapimages
+version:
+    package_repo_bundle_tag: "1.6.4" # Populate these values with the latest patch version.
+    package_version: "1.6.4"
