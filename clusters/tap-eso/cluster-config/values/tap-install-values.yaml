@@ -1,6 +1,6 @@
 tap_install:
   package_repository:
-    oci_repository: stutapregistry.azurecr.io/tapimages
+    oci_repository: stutapregistry2.azurecr.io/tapimages
   version:
       package_repo_bundle_tag: "1.6.4" # Populate these values with the latest patch version.
       package_version: "1.6.4"
