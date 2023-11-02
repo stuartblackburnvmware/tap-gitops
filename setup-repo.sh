@@ -34,11 +34,11 @@ fi
 
 # remove old tanzu managed directories
 if [[ -d "clusters/${cluster_name}/tanzu-sync/app/config/.tanzu-managed" ]]; then
-  rm -r clusters/"${cluster_name}"/tanzu-sync/app/config/.tanzu-managed/*
+  rm -rf clusters/"${cluster_name}"/tanzu-sync/app/config/.tanzu-managed/*
 fi
 
 if [[ -d "clusters/${cluster_name}/cluster-config/config/tap-install/.tanzu-managed" ]]; then
-  rm -r clusters/"${cluster_name}"/cluster-config/config/tap-install/.tanzu-managed/*
+  rm -rf clusters/"${cluster_name}"/cluster-config/config/tap-install/.tanzu-managed/*
 fi
 
 mkdir -p clusters/"${cluster_name}"
