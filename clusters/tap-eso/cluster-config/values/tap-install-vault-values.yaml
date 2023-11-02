@@ -1,0 +1,18 @@
+---
+tap_install:
+  version:
+      package_repo_bundle_tag: "1.6.4" # Populate these values with the latest patch version.
+      package_version: "1.6.4"
+  secrets:
+    eso:
+      vault:
+        server: https://vault-public-vault-b6c4924c.fa68220c.z1.hashicorp.cloud:8200
+        namespace: "admin"
+        auth:
+          kubernetes:
+            mountPath: stu-cluster
+            role: stu-cluster--tap-install-secrets
+      remote_refs:
+        tap_sensitive_values:
+          sensitive_tap_values_yaml:
+            key: secret/dev/stu-cluster/tap/sensitive-values.yaml
