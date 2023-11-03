@@ -21,7 +21,7 @@ tap_install:
     #@schema/title "Repository URL"
     #@schema/desc "Fully qualified URL (including repository) where the TAP PackageRepository is hosted."
     #@schema/examples ("TanzuNet (not recommended for production)", "registry.tanzu.vmware.com/tanzu-application-platform/tap-packages")
-    #@schema/validation min_len=1
+    #@schema/validation min_len=0
     oci_repository: ""
 
   #@schema/title "TAP Values (non-sensitive)"
