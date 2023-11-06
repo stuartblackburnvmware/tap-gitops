@@ -12,7 +12,7 @@ tap_install:
     shared:
       ingress_domain: "stu-tap.duckdns.org"
       # ingress_issuer: letsencrypt-production
-      ingress_issuer: my-company-ca
+      # ingress_issuer: my-company-ca
       kubernetes_version: "1.27.3" ###############fix underlying AKS in terraform
       # image_registry:
       # ca_cert_data: |
