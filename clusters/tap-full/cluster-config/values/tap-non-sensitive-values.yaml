@@ -68,6 +68,7 @@ tap_install:
 
     buildservice:
       exclude_dependencies: true
+      kp_default_repository: stutapregistry.azurecr.io/buildservice ###################REMOVE ME LATER SINCE IT'S IN THE SECRET FILE. ONLY ADDING CAUSE FULLDEPS NEEDS IT HERE
       kp_default_repository_secret:
         name: registry-credentials
         namespace: stu-ns
