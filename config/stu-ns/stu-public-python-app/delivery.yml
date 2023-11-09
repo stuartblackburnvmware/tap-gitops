@@ -22,7 +22,7 @@ spec:
           developer-conventions/add-source-image-label
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:c2f389c15c5636e1ca026ab20c4c8fe64faa1020
+        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:ea4f52247676703ab1cc557e2da7cad035724c54
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -32,7 +32,7 @@ spec:
         carto.run/workload-name: stu-public-python-app
     spec:
       containers:
-      - image: stutapregistry.azurecr.io/tapimages/stu-public-python-app-stu-ns@sha256:a9ca4a355d4175d4f88f4436087066a29cae70b0f07fb500e226ce131b05a7c8
+      - image: stutapregistry.azurecr.io/tapimages/stu-public-python-app-stu-ns@sha256:d7e1749ba6ee9af3bf32b6f8581c109c86c688f734c0d465ae5e3d40684db9d5
         name: workload
         resources: {}
         securityContext:
