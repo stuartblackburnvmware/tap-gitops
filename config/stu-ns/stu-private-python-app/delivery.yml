@@ -16,6 +16,7 @@ spec:
   template:
     metadata:
       annotations:
+        apps.tanzu.vmware.com/correlationid: ssh://git@github.com/stuartblackburnvmware/stu-private-python-app.git?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
