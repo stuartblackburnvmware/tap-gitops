@@ -33,7 +33,7 @@ spec:
         carto.run/workload-name: stu-public-python-app
     spec:
       containers:
-      - image: stutapregistry.azurecr.io/appimages/stu-public-python-app-stu-ns@sha256:dbefd874dc47768316ca01e258ed43cbd769bc67413c912df19bf05c12304501
+      - image: stutapregistry.azurecr.io/appimages/stu-public-python-app-stu-ns@sha256:b2335a0cfaff93fe3641d0131349ca3f83404051f23e361c7399d754a2f2277a
         name: workload
         resources: {}
         securityContext:
