@@ -16,6 +16,7 @@ spec:
   template:
     metadata:
       annotations:
+        apps.tanzu.vmware.com/correlationid: ssh://git@github.com/stuartblackburnvmware/stu-private-python-app.git?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
@@ -32,7 +33,7 @@ spec:
         carto.run/workload-name: stu-private-python-app
     spec:
       containers:
-      - image: stutapregistry.azurecr.io/appimages/stu-private-python-app-stu-ns@sha256:3a898c1848c65641968c9b729e27f8f723d83dbc62784c15f48fcce3a150a34f
+      - image: stutapregistry.azurecr.io/appimages/stu-private-python-app-stu-ns@sha256:32b8f93c166d438e0d433b8eb8ca12d9b655324812b87142cd2bd6b9d12638b8
         name: workload
         resources: {}
         securityContext:
