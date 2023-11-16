@@ -16,6 +16,7 @@ spec:
   template:
     metadata:
       annotations:
+        apps.tanzu.vmware.com/correlationid: https://github.com/stuartblackburnvmware/stu-public-python-app.git?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
         autoscaling.knative.dev/minScale: "1"
         conventions.carto.run/applied-conventions: |-
@@ -33,7 +34,7 @@ spec:
         carto.run/workload-name: stu-public-python-app
     spec:
       containers:
-      - image: stutapregistry.azurecr.io/appimages/stu-public-python-app-stu-ns@sha256:83d1c3b2ca4692631e76fe5ff36bb3b69e55332770b87138c04e60a25463bd19
+      - image: stutapregistry.azurecr.io/appimages/stu-public-python-app-stu-ns@sha256:8fbc428962d5b49b2514696392439ef9980f2eb9271198e7e7ccc9e63b6076e0
         name: workload
         resources: {}
         securityContext:
