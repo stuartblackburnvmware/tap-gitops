@@ -21,10 +21,8 @@ spec:
         autoscaling.knative.dev/minScale: "1"
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
-          developer-conventions/add-source-image-label
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:c66268b928e83fdfa5df74ca0b5755a5cae2b64e
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -34,7 +32,7 @@ spec:
         carto.run/workload-name: stu-public-python-app
     spec:
       containers:
-      - image: stutapregistry.azurecr.io/appimages/stu-public-python-app-stu-ns@sha256:9b16cfd7a6605bb29a382daf2008858490e860ad4c56c996ae3684144671aca1
+      - image: stutapregistry.azurecr.io/appimages/stu-public-python-app-stu-ns@sha256:25a22b7521252c3b9e20719b211059538c148ef4f0fa300998854c014a3ed7db
         name: workload
         resources: {}
         securityContext:
