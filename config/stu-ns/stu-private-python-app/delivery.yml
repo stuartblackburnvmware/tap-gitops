@@ -18,12 +18,11 @@ spec:
       annotations:
         apps.tanzu.vmware.com/correlationid: ssh://git@github.com/stuartblackburnvmware/stu-private-python-app.git?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
+        autoscaling.knative.dev/minScale: "1"
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
-          developer-conventions/add-source-image-label
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:fb58dda488b9269fc95ded7e608e1cdb121db544
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -33,7 +32,7 @@ spec:
         carto.run/workload-name: stu-private-python-app
     spec:
       containers:
-      - image: stutapregistry.azurecr.io/appimages/stu-private-python-app-stu-ns@sha256:3f94d652dca2e44749dec065e5a2a4f52df54959dfd656d27659caa3f0a8f29a
+      - image: stutapregistry.azurecr.io/appimages/stu-private-python-app-stu-ns@sha256:9a4a76464987c7337b8a3b33797e1717b6cfb291730b5cd081d3455cbb93dc19
         name: workload
         resources: {}
         securityContext:
