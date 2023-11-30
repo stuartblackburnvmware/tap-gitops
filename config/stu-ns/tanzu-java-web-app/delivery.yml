@@ -17,7 +17,6 @@ spec:
   template:
     metadata:
       annotations:
-        apps.tanzu.vmware.com/correlationid: https://github.com/stuartblackburnvmware/tanzu-java-web-app?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
         autoscaling.knative.dev/maxScale: "1"
         autoscaling.knative.dev/minScale: "1"
@@ -60,7 +59,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:48e63f6d9db60bd17719a497a87e583b2cd58035ba0ae6603d2f42dd7804e81a
+        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:a8c7d3a497c23b204fbfb3823e8dfd8dbcf557b5ff5fe911a47aaa41363ded36
         livenessProbe:
           httpGet:
             path: /livez
@@ -78,10 +77,5 @@ spec:
         resources: {}
         securityContext:
           runAsUser: 1000
-        startupProbe:
-          httpGet:
-            path: /readyz
-            port: 8080
-            scheme: HTTP
       serviceAccountName: default
 
