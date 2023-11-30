@@ -21,7 +21,7 @@ spec:
         autoscaling.knative.dev/maxScale: "1"
         autoscaling.knative.dev/minScale: "1"
         boot.spring.io/actuator: http://:8081/actuator
-        boot.spring.io/version: 3.0.7
+        boot.spring.io/version: 3.1.0
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
           developer-conventions/debug-convention
@@ -35,7 +35,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:c620b2e2f17f704accb10ad641618f3037d57235
+        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:41e65a774ae28164db9c4600a7333f0af61a7ec7
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -59,7 +59,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:7691a8af7e75dbd91fb778bacec6ffb9c09d84e0baf9711a0d5907476cfaf5cf
+        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:f86fb462775c237236a82808fd9cf0587f9c51e06f888a23b42256d5f3e22b60
         livenessProbe:
           httpGet:
             path: /livez
