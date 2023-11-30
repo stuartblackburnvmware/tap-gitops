@@ -16,13 +16,12 @@ spec:
   template:
     metadata:
       annotations:
+        apps.tanzu.vmware.com/correlationid: https://github.com/stuartblackburnvmware/node-express?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
-          developer-conventions/add-source-image-label
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:36a5a6be31d01ce31d0a41be0b7e9012a594632f
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -32,7 +31,7 @@ spec:
         carto.run/workload-name: node-express
     spec:
       containers:
-      - image: stutapregistry.azurecr.io/appimages/node-express-stu-ns@sha256:4f9dea5ae6946794722f6dd440a871c0b24adc6f39f6dd1ed51fab212e32859c
+      - image: stutapregistry.azurecr.io/appimages/node-express-stu-ns@sha256:f0a69798156e01bd188e77599cfcbf7004254f0667169e72d4e139df4b01d7c7
         name: workload
         resources: {}
         securityContext:
