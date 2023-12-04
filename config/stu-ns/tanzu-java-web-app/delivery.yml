@@ -19,11 +19,14 @@ spec:
       annotations:
         apps.tanzu.vmware.com/correlationid: https://github.com/stuartblackburnvmware/tanzu-java-web-app?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
+        autoscaling.knative.dev/maxScale: "1"
         autoscaling.knative.dev/minScale: "1"
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 3.0.7
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
+          developer-conventions/debug-convention
+          developer-conventions/add-source-image-label
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
@@ -33,7 +36,10 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
+        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:c620b2e2f17f704accb10ad641618f3037d57235
         developer.conventions/target-containers: workload
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"tanzu-java-web-app","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web"},"name":"tanzu-java-web-app","namespace":"stu-ns"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"testing_pipeline_matching_labels","value":{"apps.tanzu.vmware.com/language":"java","apps.tanzu.vmware.com/pipeline":"test"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/stuartblackburnvmware/tanzu-java-web-app"}}}}
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: tanzu-java-web-app
@@ -50,9 +56,13 @@ spec:
     spec:
       containers:
       - env:
+        - name: BPL_DEBUG_ENABLED
+          value: "true"
+        - name: BPL_DEBUG_PORT
+          value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:d1faac03daa4a16a4e9b29651a73de125b9590a7b6a9a8e55cfdd6dd94141585
+        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:f842ea82258dfe4f6f4a4097201301a9731c8877afc4e8758c6bf5705585e68e
         livenessProbe:
           httpGet:
             path: /livez
