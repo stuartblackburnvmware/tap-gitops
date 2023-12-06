@@ -52,7 +52,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/appsso-starter-java-stu-ns@sha256:71887e0f5d208438f6e44c6d14435f352b378b237a5f7580b0a1621896d9a46b
+        image: stutapregistry.azurecr.io/appimages/appsso-starter-java-stu-ns@sha256:ef1ed1098392f2fd649ec60a5c0388e68867133721b6c3d0a9f9dd6caaa4a3ce
         name: workload
         ports:
         - containerPort: 8080
