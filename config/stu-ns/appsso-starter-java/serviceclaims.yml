@@ -31,7 +31,7 @@ spec:
   service:
     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
     kind: ClassClaim
-    name: appsso-starter-java
+    name: azure-class-claim
   workload:
     apiVersion: serving.knative.dev/v1
     kind: Service
