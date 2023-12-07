@@ -16,7 +16,7 @@ waitRules:
 apiVersion: servicebinding.io/v1alpha3
 kind: ServiceBinding
 metadata:
-  name: appsso-starter-java-appsso-starter-java
+  name: appsso-starter-java-my-workload
   annotations:
     kapp.k14s.io/change-group: servicebinding.io/ServiceBindings
   labels:
@@ -27,11 +27,11 @@ metadata:
     app.kubernetes.io/component: run
     carto.run/workload-name: appsso-starter-java
 spec:
-  name: appsso-starter-java
+  name: my-workload
   service:
     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
     kind: ClassClaim
-    name: appsso-starter-java
+    name: my-workload
   workload:
     apiVersion: serving.knative.dev/v1
     kind: Service
