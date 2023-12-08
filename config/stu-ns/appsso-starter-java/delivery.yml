@@ -33,7 +33,7 @@ spec:
           spring-boot-convention/spring-boot-graceful-shutdown
           spring-boot-convention/spring-boot-web
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:bdd264a9f5a7117886cb399e021564a960d4e495
+        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:1655f9622711990dd541613cdcad15c09731bfef
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -52,7 +52,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/appsso-starter-java-stu-ns@sha256:394e0098f3b48e271bb6cca682c777e2324ff7a167f20fe1b3cf91aac4fae811
+        image: stutapregistry.azurecr.io/appimages/appsso-starter-java-stu-ns@sha256:b8831d555cd595690eb6f8aaf721609e4b209645221593adbfec507d408d1ec1
         name: workload
         ports:
         - containerPort: 8080
