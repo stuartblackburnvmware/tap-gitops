@@ -35,7 +35,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
         developer.apps.tanzu.vmware.com/image-source-digest: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:f5f2227aadc93ef2bb08ae4f93de04955dfcaf852b4b5397e5cb910d07b6cf0a
         developer.conventions/target-containers: workload
-        local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:f5f2227aadc93ef2bb08ae4f93de04955dfcaf852b4b5397e5cb910d07b6cf0a
+        local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:b50cb3511b77f0eb3d6fb66e3240a9e8a7c23cc1e8b1456cc9cc4b11adae7cc9
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: appsso-starter-java
