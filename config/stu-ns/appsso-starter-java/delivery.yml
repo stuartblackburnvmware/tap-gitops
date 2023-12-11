@@ -33,7 +33,7 @@ spec:
           spring-boot-convention/spring-boot-graceful-shutdown
           spring-boot-convention/spring-boot-web
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:a4b5e2b3f2325b2fbcf18e7bdac895cfea5a766f
+        developer.apps.tanzu.vmware.com/image-source-digest: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:dfe4650be03bb724cc0d68657064cca494e1f328f6b1807bfdb34398986dd753
         developer.conventions/target-containers: workload
         local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:dfe4650be03bb724cc0d68657064cca494e1f328f6b1807bfdb34398986dd753
       labels:
@@ -53,7 +53,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/appsso-starter-java-stu-ns@sha256:4c56af7f43e4a155a31bf8a1f611eea2d3a2f6d1ba6769c738a0a44744753512
+        image: stutapregistry.azurecr.io/appimages/appsso-starter-java-stu-ns@sha256:b9221d9c503024ad579bc5d58e823cdf5ba294bbb7efcd8dfb783c3ce00118c4
         name: workload
         ports:
         - containerPort: 8080
