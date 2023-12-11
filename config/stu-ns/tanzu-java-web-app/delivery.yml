@@ -38,7 +38,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
-        developer.apps.tanzu.vmware.com/image-source-digest: stutapregistry.azurecr.io/lsp:stu-ns-tanzu-java-web-app@sha256:9fc4a63a534798d41fe1721b818b275f5cdb67df203dee15d677b54e7aec2cf9
+        developer.apps.tanzu.vmware.com/image-source-digest: stutapregistry.azurecr.io/lsp:stu-ns-tanzu-java-web-app@sha256:1e5fcaa28593a03ab8a127ad4f203328e3ac3308ca8aacb565c11f28264c127b
         developer.conventions/target-containers: workload
         local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-tanzu-java-web-app@sha256:1e5fcaa28593a03ab8a127ad4f203328e3ac3308ca8aacb565c11f28264c127b
       labels:
@@ -63,7 +63,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:4fb3a7b7bbcfdcd5934d146b70e855224ea11a8c5fa4fd708c83e432863b1dd7
+        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:ef9de370c8c46be2cb734592da552ac9cf91c366ab1a88b20d048ca3068727ea
         livenessProbe:
           httpGet:
             path: /livez
