@@ -18,7 +18,7 @@ kind: ServiceBinding
 metadata:
   name: appsso-starter-java-appsso-starter-java
   annotations:
-    local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:b5c2bb437b619e41401b1ae822d772cd66c91d7a41d500d6267692775205afcb
+    local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:a69dcb88934b3433ee9831e2412a1a354075fffa66471252b71facc56f2fb03d
     kapp.k14s.io/change-group: servicebinding.io/ServiceBindings
   labels:
     app.kubernetes.io/part-of: appsso-starter-java
