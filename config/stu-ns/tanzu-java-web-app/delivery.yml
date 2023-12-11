@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       annotations:
-        apps.tanzu.vmware.com/correlationid: stutapregistry.azurecr.io/lsp:stu-ns-tanzu-java-web-app?sub_path=/
+        apps.tanzu.vmware.com/correlationid: https://github.com/stuartblackburnvmware/tanzu-java-web-app?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
         apps.tanzu.vmware.com/live-update: "true"
         autoscaling.knative.dev/maxScale: "1"
@@ -40,7 +40,6 @@ spec:
           spring-boot-convention/app-live-view-appflavours-boot
         developer.apps.tanzu.vmware.com/image-source-digest: stutapregistry.azurecr.io/lsp:stu-ns-tanzu-java-web-app@sha256:1e5fcaa28593a03ab8a127ad4f203328e3ac3308ca8aacb565c11f28264c127b
         developer.conventions/target-containers: workload
-        local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-tanzu-java-web-app@sha256:1e5fcaa28593a03ab8a127ad4f203328e3ac3308ca8aacb565c11f28264c127b
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: tanzu-java-web-app
