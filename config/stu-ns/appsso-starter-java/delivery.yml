@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       annotations:
-        apps.tanzu.vmware.com/correlationid: https://github.com/stuartblackburnvmware/appsso-starter-java?sub_path=/
+        apps.tanzu.vmware.com/correlationid: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
         apps.tanzu.vmware.com/live-update: "true"
         autoscaling.knative.dev/maxScale: "1"
@@ -33,8 +33,9 @@ spec:
           spring-boot-convention/spring-boot-graceful-shutdown
           spring-boot-convention/spring-boot-web
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:837b9b3dce9a51ccfba2ec975e1a06da7a37aebd
+        developer.apps.tanzu.vmware.com/image-source-digest: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:965338d0a52b854cded0b0bcecfa4609df83cff575f15eb61e7f2877c4cca49b
         developer.conventions/target-containers: workload
+        local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:965338d0a52b854cded0b0bcecfa4609df83cff575f15eb61e7f2877c4cca49b
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: appsso-starter-java
@@ -52,7 +53,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/appsso-starter-java-stu-ns@sha256:0ff81ee0291ad5fafdd44111a4cddb46001e4c178bb23f679c432157dff128d1
+        image: stutapregistry.azurecr.io/appimages/appsso-starter-java-stu-ns@sha256:5e5f2f1eddbac1291d3b5b2311d8f3f7e124b16eb1651dc548da8697fa6b0fab
         name: workload
         ports:
         - containerPort: 8080
