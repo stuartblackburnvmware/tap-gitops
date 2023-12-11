@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       annotations:
-        apps.tanzu.vmware.com/correlationid: https://github.com/stuartblackburnvmware/appsso-starter-java?sub_path=/
+        apps.tanzu.vmware.com/correlationid: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java?sub_path=/
         apps.tanzu.vmware.com/debug: "true"
         apps.tanzu.vmware.com/live-update: "true"
         autoscaling.knative.dev/maxScale: "1"
@@ -35,6 +35,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
         developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:a4b5e2b3f2325b2fbcf18e7bdac895cfea5a766f
         developer.conventions/target-containers: workload
+        local-source-proxy.apps.tanzu.vmware.com: stutapregistry.azurecr.io/lsp:stu-ns-appsso-starter-java@sha256:dfe4650be03bb724cc0d68657064cca494e1f328f6b1807bfdb34398986dd753
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: appsso-starter-java
