@@ -36,7 +36,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:d169884e38013f58fdd159a239f24effac079df7
+        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:6167de993a859ff400245ab5401f26e048839669
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -60,7 +60,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:266b1eaa8c1b9b365ea75231ed4089940c346a4b322d341881d99f10101428c3
+        image: stutapregistry.azurecr.io/appimages/tanzu-java-web-app-stu-ns@sha256:cd98bc7dbb6f5367ec302890c7a33bf95bfe90a7b0944f52c1fd43b88e1f0d9b
         livenessProbe:
           httpGet:
             path: /livez
