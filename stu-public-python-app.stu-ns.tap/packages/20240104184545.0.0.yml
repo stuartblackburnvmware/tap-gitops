@@ -1,0 +1,33 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: stu-public-python-app.stu-ns.tap.20240104184545.0.0+build.d1cd6f9
+spec:
+  refName: stu-public-python-app.stu-ns.tap
+  version: 20240104184545.0.0+build.d1cd6f9
+  releaseNotes: |
+    Release v20240104184545.0.0+build.d1cd6f9 of package stu-public-python-app.stu-ns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: harbor.h2o-2-21258.h2o.vmware.com/tap/workloads/stu-public-python-app-stu-ns-bundle@sha256:4fc2f3b55f5c7ec83e93b1b1bf2d0ca14435e31446144f78e95caa2abed7fcc4
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        workload_name:
+          type: string
+          default: ""
+
