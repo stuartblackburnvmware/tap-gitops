@@ -1,6 +1,6 @@
 tap_install:
   package_repository:
     oci_repository: harbor.stuart-lab.com/tanzu-application-platform/tap-packages
-    version:
-        package_repo_bundle_tag: "1.8.1" # Populate these values with the latest patch version.
-        package_version: "1.8.1"
+  version:
+      package_repo_bundle_tag: "1.8.1" # Populate these values with the latest patch version.
+      package_version: "1.8.1"
