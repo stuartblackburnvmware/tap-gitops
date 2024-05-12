@@ -7,7 +7,7 @@ tap_install:
     #   - name: tap-overlay
 
     ceip_policy_disclosed: true
-    profile: full # Can take iterate, build, run, view.
+    profile: full # Can take full, iterate, build, run, view.
 
     supply_chain: basic # Can take testing, testing_scanning.
 
