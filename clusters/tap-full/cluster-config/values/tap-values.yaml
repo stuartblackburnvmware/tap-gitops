@@ -117,7 +117,7 @@ tap_install:
 
     buildservice:
       kp_default_repository: harbor.stuart-lab.com/tanzu-application-platform/buildservice
-      exclude_dependencies: true
+      # exclude_dependencies: true
       kp_default_repository_secret:
         name: registry-credentials
         namespace: tap-install
