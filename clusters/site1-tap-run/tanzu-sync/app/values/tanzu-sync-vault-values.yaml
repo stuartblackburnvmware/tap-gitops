@@ -1,0 +1,16 @@
+---
+secrets:
+  eso:
+    vault:
+      server: http://vault.stuart-lab.com/
+      namespace: ""
+      auth:
+        kubernetes:
+          mountPath: site1-tap-run
+          role: site1-tap-run--tanzu-sync-secrets
+    remote_refs:
+      sync_git:
+        # TODO: Fill in your configuration for ssh or basic auth here (see tanzu-sync/app/config/.tanzu-managed/schema--eso.yaml)
+      install_registry_dockerconfig:
+        dockerconfigjson:
+          key: secret/dev/site1-tap-run/tanzu-sync/install-registry-dockerconfig

@@ -1,0 +1,15 @@
+---
+tap_install:
+  secrets:
+    eso:
+      vault:
+        server: http://vault.stuart-lab.com/
+        namespace: ""
+        auth:
+          kubernetes:
+            mountPath: site1-tap-run
+            role: site1-tap-run--tap-install-secrets
+      remote_refs:
+        tap_sensitive_values:
+          sensitive_tap_values_yaml:
+            key: secret/dev/site1-tap-run/tap/sensitive-values.yaml
