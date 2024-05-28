@@ -5,7 +5,7 @@ tap_install:
       ingress_domain: "stuart-lab.com"
       # ingress_issuer: letsencrypt-production
       # ingress_issuer: my-company-ca
-      kubernetes_version: "1.26.5"
+      # kubernetes_version: "1.26.5"
       image_registry:
         project_path: "harbor.stuart-lab.com"
         secret:
