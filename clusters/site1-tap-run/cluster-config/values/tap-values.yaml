@@ -87,6 +87,7 @@ tap_install:
         service:
           type: LoadBalancer
 
+    # There is a bug in TAP 1.8.x. The policy-controller pkgi will fail to reconcile if this isn't set
     policy:
       tuf_enabled: true
      
