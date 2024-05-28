@@ -86,6 +86,9 @@ tap_install:
       envoy:
         service:
           type: LoadBalancer
+
+    policy:
+      tuf_enabled: true
      
     # namespace_provisioner:
     #   controller: true
