@@ -80,7 +80,7 @@ tap_install:
     ceip_policy_disclosed: true
     profile: run # Can take full, iterate, build, run, view.
 
-    supply_chain: basic # Can take testing, testing_scanning.
+    supply_chain: testing # Can take testing, testing_scanning.
 
     contour:
       envoy:
