@@ -6,17 +6,17 @@ secrets:
       namespace: ""
       auth:
         kubernetes:
-          mountPath: site1-tap-view
-          role: site1-tap-view--tanzu-sync-secrets
+          mountPath: tap-view
+          role: tap-view--tanzu-sync-secrets
     remote_refs:
       sync_git:
         ssh:
           private_key:
-            key: secret/dev/site1-tap-view/tanzu-sync/sync-git/ssh
+            key: secret/dev/tap-view/tanzu-sync/sync-git/ssh
             property: privatekey
           known_hosts:
-            key: secret/dev/site1-tap-view/tanzu-sync/sync-git/ssh
+            key: secret/dev/tap-view/tanzu-sync/sync-git/ssh
             property: knownhosts
       install_registry_dockerconfig:
         dockerconfigjson:
-          key: secret/dev/site1-tap-view/tanzu-sync/install-registry-dockerconfig
+          key: secret/dev/tap-view/tanzu-sync/install-registry-dockerconfig
