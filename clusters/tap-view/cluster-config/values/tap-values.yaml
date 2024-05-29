@@ -2,7 +2,7 @@
 tap_install:
   values:
     shared:
-      ingress_domain: "stuart-lab.com"
+      ingress_domain: "apps.stuart-lab.com"
       # ingress_issuer: letsencrypt-production
       # ingress_issuer: my-company-ca
       kubernetes_version: "1.26.5"
@@ -87,7 +87,7 @@ tap_install:
 
     tap_gui:
       ingressEnabled: true
-      ingressDomain: stuart-lab.com
+      ingressDomain: apps.stuart-lab.com
       app_config:
         supplyChain:
           enablePlugin: true
@@ -99,9 +99,9 @@ tap_install:
           #     message: Enter with your GitHub account yo
           allowGuestAccess: true
         backend:
-          baseUrl: https://tap-gui.stuart-lab.com
+          baseUrl: https://tap-gui.apps.stuart-lab.com
           cors:
-            origin: https://tap-gui.stuart-lab.com
+            origin: https://tap-gui.apps.stuart-lab.com
     #      database:
     #        client: pg
     #        prefix: tap-gui-
@@ -112,7 +112,7 @@ tap_install:
     #          password: xxx
     #          ssl: {rejectUnauthorized: false} # Set to true if using SSL
         app:
-          baseUrl: https://tap-gui.stuart-lab.com
+          baseUrl: https://tap-gui.apps.stuart-lab.com
           title: 'TAP TAP TAP'
           support:
             url: www.leavemealone.com

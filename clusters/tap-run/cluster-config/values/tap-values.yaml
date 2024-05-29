@@ -2,7 +2,7 @@
 tap_install:
   values:
     shared:
-      ingress_domain: "stuart-lab.com"
+      ingress_domain: "apps.stuart-lab.com"
       # ingress_issuer: letsencrypt-production
       # ingress_issuer: my-company-ca
       kubernetes_version: "1.26.5"
