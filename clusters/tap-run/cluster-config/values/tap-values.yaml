@@ -104,8 +104,8 @@ tap_install:
         subPath: namespace-provisioner/run
         url:  git@jump.stuart-lab.com:/home/git/tap-gitops.git
       import_data_values_secrets:
-      - name: workload-git-auth
-        namespace: tap-install
+      - name: sync-git
+        namespace: tanzu-sync
         create_export: true
 
     excluded_packages:
