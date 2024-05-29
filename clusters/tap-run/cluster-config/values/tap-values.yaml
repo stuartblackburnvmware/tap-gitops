@@ -97,16 +97,17 @@ tap_install:
         ref: origin/main
         subPath: namespace-provisioner/run
         url:  git@jump.stuart-lab.com:/home/git/tap-gitops.git
+      import_data_values_secrets:
+      - name: sync-git
+        namespace: tanzu-sync
+        create_export: true
       # additional_sources:
       # - git:
       #     ref: origin/main
       #     subPath: namespace-provisioner/custom-resources/secrets/global
       #     url: https://dev.azure.com/crenaud0395/tap-gitops/_git/tap-gitops
       #   path: _ytt_lib/globalsecrets
-      import_data_values_secrets:
-      - name: sync-git
-        namespace: tanzu-sync
-        create_export: true
+
 
     excluded_packages:
       - learningcenter.tanzu.vmware.com
