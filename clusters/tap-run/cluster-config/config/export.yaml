@@ -1,0 +1,9 @@
+---
+apiVersion: secretgen.carvel.dev/v1alpha1
+kind: SecretExport
+metadata:
+  name: fake-es
+  namespace: tanzu-sync
+spec:
+  toNamespaces:
+  - 'test-ns'

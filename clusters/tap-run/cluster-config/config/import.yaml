@@ -1,0 +1,9 @@
+apiVersion: secretgen.carvel.dev/v1alpha1
+kind: SecretImport
+metadata:
+  name: fake-es
+  namespace: test-ns
+  annotations:
+    tekton.dev/git-0: https://dev.azure.com
+spec:
+  fromNamespace: tanzu-sync
