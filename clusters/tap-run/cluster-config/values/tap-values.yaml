@@ -96,7 +96,7 @@ tap_install:
       gitops_install:
         ref: origin/main
         subPath: namespace-provisioner/run
-        url:  git@jump.stuart-lab.com55:/home/git/tap-gitops.git
+        url:  git@jump.stuart-lab.com:/home/git/tap-gitops.git
       # additional_sources:
       # - git:
       #     ref: origin/main
