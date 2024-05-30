@@ -7,9 +7,9 @@ tap_install:
         namespace: ""
         auth:
           kubernetes:
-            mountPath: tap-run
-            role: tap-run--tap-install-secrets
+            mountPath: vcf-run
+            role: vcf-run--tap-install-secrets
       remote_refs:
         tap_sensitive_values:
           sensitive_tap_values_yaml:
-            key: secret/dev/tap-run/tap/sensitive-values.yaml
+            key: secret/dev/vcf-run/tap/sensitive-values.yaml

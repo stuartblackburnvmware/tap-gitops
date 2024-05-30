@@ -11,7 +11,7 @@ spec:
   - git:
       ref: origin/main
       url: git@jump.stuart-lab.com:/home/git/tap-gitops.git
-      subPath: clusters/tap-run/cluster-config/dependent-resources
+      subPath: clusters/vcf-run/cluster-config/dependent-resources
       secretRef:
         name: sync-git
   template:
