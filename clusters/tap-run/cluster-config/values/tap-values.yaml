@@ -112,6 +112,33 @@ tap_install:
       #     url: https://dev.azure.com/crenaud0395/tap-gitops/_git/tap-gitops
       #   path: _ytt_lib/globalsecrets
 
+amr:
+ observer:
+   auth:
+     kubernetes_service_accounts:
+       enable: true
+   cloudevent_handler:
+     endpoint: https://amr-cloudevent-handler.stuart-lab.com
+   ca_cert_data: |
+        -----BEGIN CERTIFICATE-----
+        MIIDHjCCAgagAwIBAgIQXDpkzEbJg7MtEmXTczvsozANBgkqhkiG9w0BAQsFADAp
+        MScwJQYDVQQDEx50YXAtaW5ncmVzcy1zZWxmc2lnbmVkLXJvb3QtY2EwHhcNMjQw
+        NTMwMTUzODQwWhcNMjQwODI4MTUzODQwWjApMScwJQYDVQQDEx50YXAtaW5ncmVz
+        cy1zZWxmc2lnbmVkLXJvb3QtY2EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+        AoIBAQDoiKq6Uv1OKIZzLgZ5y4rvr3R8dx95mYK5JuJK8UATAh0obVHFfQuHAqgf
+        YYnUyDOu6VnklgPTjVNXjATNAD08JZuQFA8aWE2WxH9aU5LaLJiolfY8WgyY3X2y
+        zIuKqUe/UE035WiqgRRn+3piaN09m5VPRcZro/XfTIqvHWOwxu043RvE1PhqbJLp
+        OHoDE1o752GAO+FlCdvAJII9HD+hBnwdg3/DtYOvcguesbTHZBiOrceDvmiWrGLQ
+        ThSEgvokOiJxKDP2FuxfUzgY6aCpoUo+O4dvzuH1S5pcmZCGoGshuNO5UgaxyR6t
+        WEyzCCBm8LNYnYj0Vx6Ptvse93TzAgMBAAGjQjBAMA4GA1UdDwEB/wQEAwICpDAP
+        BgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTPZjpqSudhOsmrieQGNSRNHTFw/TAN
+        BgkqhkiG9w0BAQsFAAOCAQEAgYdrJZLtKwRitIHqrlqdS088zdFml6DLkjLF/M0x
+        pRf/EYY0pIEfv41lf9OL3zlSGktEc9WSSp4R+i49ZmtdtXFjaARAXY21N4CoaTDy
+        xxoZ1F0mjkyT51L5peLqrtP7qXnTGICmtmJXndM5bcuQHOMmRogQsUN6XR6haI66
+        gtYiUGhSlgyi/OCse5y9de5j3rrpbjFKuvBBcllrgFB6ZUsC7gjeze2GJC3mpDDh
+        hdupvyuNRUXPA+qNdTNGcMKShgdsBgxhfIKmITgceUjZIakIfA6D6TtjS4Yo7Y1c
+        yKWvlORfb3lMLpzsuq97q7PSsINwvOMpL0Vm5mO1kIWdPg==
+        -----END CERTIFICATE-----
 
     excluded_packages:
       - learningcenter.tanzu.vmware.com
