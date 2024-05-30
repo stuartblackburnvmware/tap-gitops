@@ -15,10 +15,6 @@ spec:
       secretRef:
         name: sync-git
   template:
-  - sops:
-      age:
-        privateKeysSecretRef:
-          name: sync-age-identity
   - ytt: {}
   deploy:
   - kapp:
